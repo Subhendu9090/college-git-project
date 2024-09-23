@@ -254,5 +254,50 @@ section h2 {
 }
 
 </style>
+<script>
+     const projects = [
+        {
+            title: "E-commerce Platform",
+            description: "Developed a fully-functional e-commerce platform with cart, payment integration, and admin panel using React, Node.js, and MongoDB."
+        },
+        {
+            title: "Social Media Dashboard",
+            description: "Real-time dashboard with user authentication, post feeds, and notifications using Django, React, and PostgreSQL."
+        },
+        {
+            title: "Task Management System",
+            description: "Task management tool with collaboration features using the MERN stack (MongoDB, Express, React, Node.js)."
+        }
+    ];
+
+    // Function to dynamically create and load project items
+    function loadProjects() {
+        const projectList = document.getElementById('project-list');
+
+        projects.forEach(project => {
+            // Create the project item container div
+            const projectItem = document.createElement('div');
+            projectItem.classList.add('project-item');
+
+            // Create the project title element (h3)
+            const projectTitle = document.createElement('h3');
+            projectTitle.textContent = project.title;
+
+            // Create the project description element (p)
+            const projectDescription = document.createElement('p');
+            projectDescription.textContent = project.description;
+
+            // Append title and description to the project item container
+            projectItem.appendChild(projectTitle);
+            projectItem.appendChild(projectDescription);
+
+            // Append the project item container to the project list
+            projectList.appendChild(projectItem);
+        });
+    }
+
+    // Call the function to load projects after the page loads
+    window.onload = loadProjects();
+</script>
 </body>
 </html>
